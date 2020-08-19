@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cross Browser Video Player - Mozilla</title>
+
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+
+		<!-- Material icons -->
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="video-container" class="container">
+			<!-- video -->
+			<video id="video" preload="metadata" poster="img/poster.jpg">
+				<!-- video source -->
+				<source src="video/sintel-short.mp4" type="video/mp4" />
+				<source src="video/sintel-short.webm" type="video/webm" />
+				<!-- <source
+					src="video/tears-of-steel-battle-clip-medium.ogg"
+					type="video/ogg"
+                /> -->
+
+				<!-- subtitles -->
+				<track
+					label="English"
+					kind="subtitles"
+					srclang="en"
+					src="subtitles/vtt/sintel-en.vtt"
+					default
+				/>
+				<track
+					label="Deutsch"
+					kind="subtitles"
+					srclang="de"
+					src="subtitles/vtt/sintel-de.vtt"
+				/>
+				<track
+					label="Español"
+					kind="subtitles"
+					srclang="es"
+					src="subtitles/vtt/sintel-es.vtt"
+				/>
+			</video>
+
+			<!-- controller -->
+			<div class="control">
+				<!-- progress -->
+				<progress id="progress" value="0.6" min="0"></progress>
+
+				<!-- other controls -->
+				<div class="control-bottom">
+                    <!-- play-pause -->
+					<button id="play-pause" type="button">
+						<span class="material-icons">
+							play_arrow
+						</span>
+                    </button>
+                    
+                    <!-- stop -->
+					<button id="stop" type="button">
+						<span class="material-icons">
+							stop
+						</span>
+                    </button>
+                    
+                    <!-- mute -->
+					<button id="mute" type="button">
+						<span class="material-icons">
+							volume_off
+						</span>
+                    </button>
+                    
+                    <!-- volume increse -->
+					<button id="vol-inc" type="button">
+						<span class="material-icons">
+							volume_up
+						</span>
+                    </button>
+                    
+                    <!-- volume decrese -->
+					<button id="vol-dec" type="button">
+						<span class="material-icons">
+							volume_down
+						</span>
+                    </button>
+                    
+                    <!-- Fullscreen -->
+					<button id="fs" type="button">
+						<span class="material-icons">
+							open_in_full
+						</span>
+                    </button>
+                    
+                    <!-- Subtitles -->
+					<button id="subtitles" type="button">
+						<span class="material-icons">
+							closed_caption
+						</span>
+					</button>
+				</div>
+			</div>
+        </div>
+        
+        <!-- Video player -->
+        <script src="js/video-player.js"></script>
+	</body>
+</html>

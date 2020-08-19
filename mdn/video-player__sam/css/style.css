@@ -1,0 +1,91 @@
+/* Basic reset */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+/* Reusable */
+.container {
+	width: 900px;
+	margin: 0 auto;
+}
+
+/* Video */
+#video-container {
+	margin-top: 20px;
+	position: relative;
+}
+
+#video-container:hover > .control {
+	display: block;
+}
+
+video {
+	width: 100%;
+	height: 500px;
+	background-color: #000;
+}
+
+video::cue {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    display: block;
+    background-color: #000;
+}
+
+/* Control */
+.control {
+	border: 1px solid black;
+	background: #fff;
+	padding: 15px;
+	display: none;
+
+	position: absolute;
+	width: 100%;
+	top: calc(500px - 84px);
+}
+
+.control .material-icons {
+	font-size: 15px;
+	color: #333;
+}
+
+.control-bottom {
+	display: flex;
+	justify-content: space-between;
+}
+
+#progress {
+	width: 100%;
+	height: 7px;
+	margin-bottom: 10px;
+	background: #fff;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+.control-bottom button {
+	padding: 5px;
+	background: #fff;
+	border: 0;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	border: 1px solid #000;
+	transition: all 0.2s;
+}
+
+.control-bottom button:hover {
+	background-color: #2980b9;
+}
